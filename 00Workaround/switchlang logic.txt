@@ -1,0 +1,25 @@
+Obj text;
+Obj button-fr;
+Obj button-eng;
+Script Lang;
+ObjEmpty rememberLang;
+	currentlang
+
+Lang(~)
+	public xml thisLang (to be picked in interface);
+	public var thislang;
+	private var currentlang;
+	private var setlang;
+	Switch()
+		set var thislang to currentlang;
+		set/replace all texts using xml file;
+		set var currentlang to setlang;
+	Check()
+		check if currentlang == setlang; //once on each scene start, except the lang picking scene
+		if currentlang != setlang;
+
+
+
+button-fr ~ script Lang;
+button-eng ~ script Lang;
+rememberLang ~ script Lang;
