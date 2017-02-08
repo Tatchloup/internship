@@ -2,13 +2,15 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour {
+public class ChangeScene : MonoBehaviour 
+{
 
+	public string thisScene;
 	// Use this for initialization
-	void OnTriggerEnter2D (Collider2D other) 
+	public void Change()
 	{
 
-			SceneManager.LoadScene("main");
+			SceneManager.LoadScene(thisScene);
 		
 	}
 }

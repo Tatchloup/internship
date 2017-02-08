@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour 
 {
 
+	public TextAsset[] thisList;
 	public TextAsset textFile;
 	public string[] textlines;
 
@@ -19,12 +20,23 @@ public class TextManager : MonoBehaviour
 	public int currentLine;
 	public int endLine;
 
+	public int thisLang;
+	public GameObject staticIntel;
+
 	//public TextAsset newLang;
+
+	void Awake()
+	{
+		staticIntel = GameObject.FindWithTag("LangData");
+		thisLang = staticIntel.GetComponent<LangSet>().langPicked;
+
+	}
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		textFile = thisList[thisLang];
 		if(textFile != null)
 		{
 			//get line from file, new line for each return to the line

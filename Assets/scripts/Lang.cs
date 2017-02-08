@@ -5,23 +5,27 @@ using UnityEngine.UI;
 
 public class Lang : MonoBehaviour 
 {
-	public GameObject thisLang; //(to be picked in interface)
-	public GameObject mc;
-	public string thislang;
-	private string currentlang;
-	private string setlang;
-	public TextAsset textFile;
-	public string[] textlines;
-	public TextAsset newLang;
-	private TextManager textManager;
+	public int thisLang;
+	public GameObject staticIntel;
+
+	void Awake()
+	{
+		staticIntel = GameObject.FindWithTag("LangData");
+
+	}
+
+	public void SwitchLang()
+	{
+		staticIntel.GetComponent<LangSet>().langPicked = thisLang;
+	}
 
 
 	// Use this for initialization
-	void Start () 
+	/*void Start () 
 	{
 		mc = GameObject.Find("MainCamera");
-		/*textManager = (TextManager)mc.GetComponent(typeof(TextManager));
-		textFile = textManager.Component.TextAsset("textFile");*/
+		textManager = (TextManager)mc.GetComponent(typeof(TextManager));
+		textFile = textManager.Component.TextAsset("textFile");
 	}
 	
 	// Update is called once per frame
@@ -29,12 +33,12 @@ public class Lang : MonoBehaviour
 	{
 		
 	}
-/*
+
 	Switch()
 		set var thislang to currentlang;
 		set/replace all texts using xml file; //Replace() (?)
 		set var currentlang to setlang;
-		*/
+		
 	void Switch()
 	{
 		currentlang=thislang;
@@ -44,7 +48,7 @@ public class Lang : MonoBehaviour
 		setlang=currentlang;
 
 	}
-	/*Replace() - Set text intot the text lines*/
+	Replace() - Set text intot the text lines
 	public void Replace()
 	{
 		textFile = newLang;
@@ -52,7 +56,7 @@ public class Lang : MonoBehaviour
 		//endLine = textlines.Length - 1;
 
 
-	}
+	}*/
 
 
 }

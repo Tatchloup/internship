@@ -7,7 +7,8 @@ public class PicChange : MonoBehaviour
 {
 
 	// Use this for initialization
-	public Sprite nextSprite;
+    public Sprite nextSprite;
+	public Sprite prevSprite;
     //Sprite prevSprite;
  
      /// The Array of Images.
@@ -31,6 +32,17 @@ public class PicChange : MonoBehaviour
              //image.sprite = nextSprite;
              image.sprite = nextSprite;
              currentImage +=1;
+         }
+     }
+     public void PrevPic()
+     {
+        prevSprite = thisSprite[currentImage];
+         // Loop through each image and set it's Sprite to the other Sprite.
+         foreach (Image image in images)
+         {
+             //image.sprite = nextSprite;
+             image.sprite = prevSprite;
+             currentImage -=1;
          }
      }
      
