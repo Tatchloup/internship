@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour 
 {
 
+
+/*Needs to be put on the main camera (needs a cam to function?)*/
 	public TextAsset[] thisList;
 	public TextAsset textFile;
 	public string[] textlines;

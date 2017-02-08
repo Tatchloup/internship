@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PicChange : MonoBehaviour 
 {
 
+/* Needs to be put on the image whose sprite we want to change*/
 	// Use this for initialization
     public Sprite nextSprite;
 	public Sprite prevSprite;
